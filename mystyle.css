@@ -1,0 +1,206 @@
+/*커서 커스텀 https://blog.webi.kr/34*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');  /* 구글 폰트: 구기 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap'); /* 구글 폰트: 나눔고딕 */
+@font-face {
+    font-family: 'KyoboHandwriting2020A';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} /* 눈누 폰트: 교보손글씨 2020 박도연 */
+
+*{
+    cursor: url(./images/cursor.cur), auto; /* 농담곰 마우스 커서 적용 */
+}
+body {
+    font-family: 'Nanum Gothic', 돋움체, Arial, Helvetica, sans-serif;  /* 본문 전체에 나눔고딕 적용 */
+}
+#contents{
+    width: 1100px;  /* 본문 전체 가로 크기 설정 */
+    margin: 0 auto;
+}
+header{
+    margin-top: 10px;
+    height: 200px;
+    text-align: center;
+    background-image: url(./images/title.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    position: relative; /* HTML로 작성한 텍스트 로고를 가운데에 배치하기 위해 포지션 적용 */
+}
+#textcenter{
+    position: absolute; /* 위 헤더를 기준으로 위치 적용 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #303030;
+}
+.maintitle{
+    font-family: 'Gugi', 돋움체, Arial, Helvetica, sans-serif;  /* 헤더 텍스트 로고 글씨체 적용 */
+    font-size: 65px;
+    color: #303030;
+}
+#mainmenu{
+    margin-top: 13px;
+    margin-left: 200px;     /* 메뉴 리스트 위치 조정 */
+}
+nav{
+    margin-top: 10px;
+    height: 50px;
+    border: 1px solid #00000000;
+    background-color: #e0e0e0;
+    border-radius: 10px 10px 10px 10px; /* 메뉴바 모서리 둥글게 */
+    font-size: 20px;
+    font-weight: bold;
+}
+ul{
+    display: inline;
+    text-align: center;
+    list-style-type: none;
+}
+li{
+    float: left;
+    color: #303030;
+}
+iframe{
+    margin-top: 10px;
+    overflow-x: hidden;
+    width: 100%;
+    height: 500px;
+}
+    
+/* 사이드바 삭제로 CSS 속성도 주석 처리함.
+aside{
+    width: 25%;
+    border: 1px solid blue;
+    margin-top: 10px;
+    float: left;
+}
+*/
+
+section{    /* 본문 영역 */
+    width: 100%;
+    border: 0px solid darkgreen;    /* 작업 중 위치 확인을 위하여 만들었던 항목, 추후 0px로 수정 */
+    float: right;
+    margin-top: 10px;
+}
+
+footer{ 
+    text-align: right;  
+}
+/* 페이지 하단 우측정렬, 레이어 팝업 창까지 우측정렬되어 삭제.
+*/
+
+td{ /* 본문 영역을 table 태그로 작성했기 때문에 td 태그에 속성을 주어 내부를 정렬함. */
+    padding: 10px;
+    padding-top: 50px;
+    vertical-align: top;
+}
+.p-img{ /* 본문 이미지 사이즈가 페이지마다 일정하도록 조정 - 이미지에 적용 */
+    max-width: 490px;
+    max-height: 490px;
+
+}
+.img-aline{ /* 본문 이미지 사이즈가 페이지마다 일정하도록 조정(2) - 표 내부에 적용 */
+    width: 500px;
+    height: 500px;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+.t1{    /* 본문(텍스트) 영역 꾸미기 */
+    font-family: 'KyoboHandwriting2020A', 돋움체, Arial, Helvetica, sans-serif; /* 본문 글시체 */
+    font-size: 15pt;
+    color:black;
+    line-height: 180%;  /* 가독성을 고려하여 줄간격 설정 */
+}
+.t1:active, .t1:hover{ /* 하단 a 태그에 적용한 active 및 hover 속성 비적용을 위한 속성 입력 */
+    color:black;
+    text-shadow: none;
+}
+q{  /* 본문(텍스트 - 상품명) 꾸미기 */
+    font-size: 25pt;
+    margin-left: 10px;
+}
+
+/* 클릭 가능한 a 태그 텍스트 꾸미기 */
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #303030;
+}
+a:active {
+    text-decoration: none;
+    color: green;
+}
+a:hover {
+    text-decoration: none;
+    color: green;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+}
+
+
+/* 레이어 팝업 */
+
+
+
+/* CSS style sheet */
+ 
+* {
+    margin:0;
+    padding:0;
+}
+ 
+ul, li { list-style: none; }
+ 
+a { text-decoration: none; }
+ 
+#layerPopup {
+    display: none;
+}
+ 
+#layerPopup + label {
+    display:inline-block;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: right;
+}
+ 
+#layer_bg {
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+ 
+#layer_bg > #popup {
+    position:absolute;
+    padding:15px;
+    box-sizing:border-box;
+    border-radius:15px; 
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:600px;
+    height:400px;
+    background:#fff;
+    box-shadow: 7px 7px 5px rgba(0,0,0,0.2); 
+}
+ 
+#layer_bg > #popup > h2 {
+    margin-bottom:25px;
+    font-size: 25px;
+}
+ 
+#layer_bg > #popup > h2 > label {
+    float: right;
+}
+ 
+#layerPopup:checked + label + #layer_bg {
+    display:block;
+}
